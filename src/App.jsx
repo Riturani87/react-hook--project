@@ -4,17 +4,18 @@ import './index.css';
 
 
 const App = () =>{
-
-const[count,setCount]=useState(0);
-//[current data,updated data ] = initial data
-const IncNum =()=>{
-setCount(count+1);
+let Newtime= new Date().toLocaleTimeString();
+const[Curtime,SetCtime]=useState(Newtime);
+const updatedtime=()=>{
+   
+      Newtime= new Date().toLocaleTimeString();
+      SetCtime(Newtime);
 };
 return(
  <>
     <div className="container">
-    <h1 className="heading"> {count} </h1>
-   <button onClick={ IncNum }className="btn">click me </button>
+    <h1 className="heading"> {Curtime} </h1>
+   <button onClick={ updatedtime }className="btn">GET TIME  </button>
    </div>
  </>
 
